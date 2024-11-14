@@ -1,0 +1,45 @@
+pagina selettore: 
+- selettori vari
+<form method="POST">
+<select required >
+<option>opzione n </option>
+</select>
+ogni selettore deve avere un name per il post
+
+bottone PARTITA input type="reset"
+bottone SALVA input type="submit" formaction="pagina.php"
+bottone FINISCI stessa roba di salva ma pag diversa
+
+collegare il db per il discorso del salva: 
+in php: 
+$conn = new msqli(vari parametri del db)
+prendo tramite post: 
+if(server[request method] == "Post" || isset(nome del button))
+prendo col post e il nome
+
+
+pagina login (index): 
+campo name e pass da passare con post
+php: 
+prendo name e pass
+faccio una query al db per vedere se contiene qualcosa: 
+se NON vuoto{
+prendo tutti gli utenti che hanno quel nome
+controllo ogni singolo nome con un for
+controllo se il nome e la pass inserita nel form corrispondono al nome e pass di quella riga
+
+}
+
+altrimenti:
+inserisco i dati nel db e rimando alla stessa pagina
+
+pagina che prende dati e manda al db: 
+collego il db
+prendo col post
+faccio query normale di insert: 
+$stmt = conn->query(faccio una query di insert semplice)
+bonus query con bind param
+$query = query coi punti
+$stmt = $conn->prepare
+$stmt->bind_param("tipo", val)
+$stmt->execute(); 
